@@ -6,7 +6,7 @@ export("clean")
 
 # select columns we will use for prediction
 select_columns <- function(data) {
-  data[, .(user_name, user_location)]
+  data[, .(user_location)]
 }
 
 set_lat_long <- function(data, cities) {
@@ -21,6 +21,5 @@ set_lat_long <- function(data, cities) {
 clean <- function(data, cities) {
   data <- select_columns(data)
   data <- set_lat_long(data, cities)
-  print(data)
   data
 }
