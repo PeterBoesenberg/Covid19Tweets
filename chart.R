@@ -5,14 +5,10 @@ export("get_tweet_location_chart")
 
 # Setup styling and markings to use througout all charts
 g <- list(
-  projection = list(scale = 5),
-  scope = 'usa',
-  # projection = list(type = 'albers usa'),
   showland = TRUE,
   landcolor = toRGB("gray85"),
   countrywidth = 1,
-  countrycolor = toRGB("white"),
-  center = list(lon= 32.254, lat=48.515) #Kropy
+  countrycolor = toRGB("white")
 )
 
 
@@ -32,7 +28,7 @@ get_tweet_location_chart <- function(data) {
     x = ~long, y = ~lat
   )
   
-  # fig <- layout(fig, title = 'Covid19 Tweet locations', geo = g, annotations = annotation)
+  fig <- layout(fig, title = 'Covid19 Tweet locations', geo = g, annotations = annotation)
   
   fig
 }
